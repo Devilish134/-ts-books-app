@@ -1,7 +1,7 @@
 export const randomID = (
   textLength: number
 ): string => {
-  let id = '';
+  let id: string = '';
   const characters =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const charsAmount = characters.length;

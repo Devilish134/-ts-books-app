@@ -5,7 +5,7 @@ import './BooksList.css';
 
 export interface Props {
   books: Book[];
-  removeBook: (book: Book) => void;
+  removeBook: (bookId: Book['id']) => void;
 }
 
 const BooksList: React.FC<Props> = ({

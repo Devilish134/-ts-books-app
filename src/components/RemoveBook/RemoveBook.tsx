@@ -1,17 +1,21 @@
 import { Book } from '../../interfaces/Book.interface';
+import './RemoveBook.css';
 
 interface Props {
-  removeBook: (book: Book) => void;
-  book: Book;
+  removeBook: (bookId: Book['id']) => void;
+  bookId: Book['id'];
 }
 
 const RemoveBook: React.FC<Props> = ({
   removeBook,
-  book,
+  bookId,
 }) => {
   return (
-    <button onClick={() => removeBook(book.id)}>
-      remove Book
+    <button
+      className='remove-book-button'
+      onClick={() => removeBook(bookId)}
+    >
+      Remove
     </button>
   );
 };

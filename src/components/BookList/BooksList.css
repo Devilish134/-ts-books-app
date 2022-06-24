@@ -1,5 +1,8 @@
 .books-list {
+  display: inline-table;
+  justify-content: space-evenly;
   list-style-type: none;
   margin: 2rem;
   padding: 0;
+  text-align: right;
 }

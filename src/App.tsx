@@ -26,12 +26,10 @@ const App: React.FC = () => {
     setBooks([...books, book]);
   };
 
-  const removeBook = (e: any) => {
-    const thisBook =
-      e.target.getAttribute('key');
+  const removeBook = (bookId: Book['id']) => {
     setBooks(
       booksData.filter(
-        (book) => book.id !== thisBook
+        (book) => book.id !== bookId
       )
     );
   };

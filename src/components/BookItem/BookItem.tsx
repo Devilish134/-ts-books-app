@@ -4,7 +4,7 @@ import './BookItem.css';
 
 interface Props {
   book: Book;
-  removeBook: (book: Book) => void;
+  removeBook: (bookId: Book['id']) => void;
 }
 
 const BookItem: React.FC<Props> = ({
@@ -17,7 +17,10 @@ const BookItem: React.FC<Props> = ({
         {book.title} by {book.author},
         {book.price}$
       </li>
-      <RemoveBook removeBook={removeBook} />
+      <RemoveBook
+        removeBook={removeBook}
+        bookId={book.id}
+      />
     </>
   );
 };

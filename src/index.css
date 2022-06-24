@@ -27,7 +27,7 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 40rem;
+  max-width: 42rem;
   height: 100%;
   text-align: center;
   display: flex;
