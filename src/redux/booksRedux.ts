@@ -1,5 +1,4 @@
 /* ACTIONS */
-
 import { Book } from '../interfaces/Book.interface';
 import {
   ADD_BOOK,
@@ -7,6 +6,12 @@ import {
   BooksState,
   REMOVE_BOOK,
 } from './bookTypes';
+import { StoreState } from './mainTypes';
+
+//selectors
+export const getAllBooks = (
+  state: StoreState
+): BooksState => state.books;
 
 // action creators
 export const addBookAction = (

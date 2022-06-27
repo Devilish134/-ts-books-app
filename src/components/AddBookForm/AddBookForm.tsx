@@ -1,42 +1,38 @@
 import React, { useState } from 'react';
-import {
-  useDispatch,
-  useSelector,
-} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addBookAction } from '../../redux/booksRedux';
-import { BooksAction } from '../../redux/bookTypes';
-import { StoreState } from '../../redux/mainTypes';
 import { randomID } from '../../utils/randomId';
 import './AddBookForm.css';
 
 const AddBookForm: React.FC = () => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [price, setPrice] = useState(0);
 
-  // state reference
-  const books = useSelector(
-    (state: StoreState) => state.books
-  );
+  const id = randomID(10);
 
   const addBook = (
     id: string,
     title: string,
     author: string,
     price: number
-  ) =>
-    dispatch(
-      addBookAction()
-    );
+  ) => {
+    const action = addBookAction({
+      id,
+      title,
+      author,
+      price,
+    });
+    dispatch(action);
+  };
 
   const handleSubmit = (
     e: React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
-    addBook(id: randomID(10), title, author, price);
-    console.log(books);
+    addBook(id, title, author, price);
     setTitle(' ');
     setAuthor(' ');
     setPrice(0);
